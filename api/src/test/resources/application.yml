@@ -1,0 +1,6 @@
+spring:
+  datasource:  # 테스트 코드들을 실행 할 때는 이 데이터소스 참조 (로컬의 DB 의존성 제거하여 온전히 코드만 확인)
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: fintech
+    password: fintech
