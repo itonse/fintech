@@ -1,7 +1,7 @@
 package com.example.api.loan.request
 
 import com.example.api.loan.GenerateKey
-import com.example.api.loan.encrypt.EncryptComponet
+import com.example.api.loan.encrypt.EncryptComponent
 import com.example.domain.repository.UserInfoRepository
 import org.springframework.stereotype.Service
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 class LoanRequestServiceImpl(
     private val generateKey: GenerateKey,
     private val userInfoRepository: UserInfoRepository,   //  UserInfo 엔티티 접근
-    private val encryptComponent: EncryptComponet   // 암호화 기능
+    private val encryptComponent: EncryptComponent   // 암호화 기능
 
 ): LoanRequestService {
     override fun loanRequestMain(

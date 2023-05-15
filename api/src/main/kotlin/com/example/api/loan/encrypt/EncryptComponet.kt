@@ -7,7 +7,7 @@ import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
 @Component
-class EncryptComponet {    // 암호화, 복호화 기능
+class EncryptComponent {    // 암호화, 복호화 기능
     companion object {
         private const val secretKey = "12345678901234561234567890123456"   // secretKey 값 지정
     }
