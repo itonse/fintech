@@ -20,7 +20,7 @@ class LogAspect {
     @Around("isApi()")
     fun loggingAspect(joinPoint: ProceedingJoinPoint): Any {   // join Point 를 가져와서 그 다음 join Point 로 넘김
         val stopwatch = StopWatch()
-        stopwatch.start()   // 스탑워치 시작
+        stopwatch.start()   // 스탑워치 시작 (성능 측정)
 
         val result = joinPoint.proceed()   // joinPoint 를 실행해서 응답값을 받음
 
@@ -29,6 +29,6 @@ class LogAspect {
         // 로그 찍기: jointPoint 의 이름, jointPoint 에 어떤 args 가 들어왔는지, 해당 joinPoint 를 실행할 때 걸린 시간
         logger.info { "${joinPoint.signature.name} ${joinPoint.args[0]} ${stopwatch.lastTaskTimeMillis}" }
 
-        return result
+        return result  // 그 다음 join Point 로 넘어감
     }
 }
