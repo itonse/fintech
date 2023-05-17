@@ -25,7 +25,7 @@ class LoanRequestServiceImpl(
 
         val userInfoDto = loanRequestInputDto.toUserInfoDto(userKey)   // USR_INFO 테이블 포맷에 맞게 DTO 변경
 
-        saveUserInfo(userInfoDto)  // 저장
+        saveUserInfo(userInfoDto)  // 유저 데이터 저장
 
         loanRequestReview(userInfoDto)   // 심사를 요청 (Kafka 를 통해서 유저의 심사결과를 받음)
 

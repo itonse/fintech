@@ -12,12 +12,12 @@ class LoanReviewController (
     private val loanReviewServiceImpl: LoanReviewServiceImpl
 ) {
 
-    @GetMapping("review/{userKey}")   // 유저 키값을 받아와서
+    @GetMapping("review/{userKey}")   // 유저키를 넣었을 때 대출 심사결과를 가져옴.
     fun getReviewData(
         @PathVariable userKey: String
     ): ResponseEntity<LoanReviewDto.LoanReviewResponseDto> {
         return ResponseEntity.ok(
-            loanReviewServiceImpl.loanReviewMain(userKey)   // 서비스 로직에 넣음
+            loanReviewServiceImpl.loanReviewMain(userKey)
         )
 
     }
