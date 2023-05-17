@@ -41,6 +41,4 @@ class LoanRequestServiceImpl(
             userInfoDto.toLoanRequestKafkaDto()
         )
     }
-
-
 }
