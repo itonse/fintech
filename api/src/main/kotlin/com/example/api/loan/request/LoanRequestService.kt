@@ -11,5 +11,5 @@ interface LoanRequestService {     // 인터페이스로 생성하여 확장성 
         userInfoDto: UserInfoDto
     ): UserInfo   // output 값
 
-    fun loanRequestReview(userKey: String)  // 유저의 대출 심사정보를 받음 (Kafka 이용)
+    fun loanRequestReview(userInfoDto: UserInfoDto)  // 유저의 대출 심사정보를 받음 (Kafka 이용)
 }

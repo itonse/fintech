@@ -11,6 +11,7 @@ dependencies {
     implementation("io.springfox:springfox-boot-starter:3.0.0")
 
     implementation(project(":domain"))   // domain 모듈 사용
+    implementation(project(":kafka"))   // kafka 모듈 사용
 
     // test 관련
     testImplementation("io.mockk:mockk:1.12.0")    // 코틀린 테스트 프레임워크 (단위테스트)

@@ -17,9 +17,10 @@ class EncryptComponent {    // 암호화, 복호화 기능
 
     // 암호화
     fun encryptString(encryptString: String): String {    // 암호화 할 스트링을 받음
-        val encryptString = cipherPkcs5(Cipher.ENCRYPT_MODE, secretKey).doFinal(encryptString.toByteArray(Charsets.UTF_8))   // ByteArray 변환하여 암호화 진행
+        val encryptedString = cipherPkcs5(Cipher.ENCRYPT_MODE, secretKey).doFinal(encryptString.toByteArray(Charsets.UTF_8))   // ByteArray 변환하여 암호화 진행
 
-        return String(encoder.encode(encryptString))   // 인코딩하여 리턴
+
+        return String(encoder.encode(encryptedString))   // 인코딩하여 리턴
     }
 
     // 복호화

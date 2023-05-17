@@ -1,6 +1,7 @@
 package com.example.api.loan.request
 
 import com.example.domain.domain.UserInfo
+import com.example.kafka.dto.LoanRequestDto
 
 data class UserInfoDto(   // 데이터클래스
     val userKey: String,
@@ -12,4 +13,7 @@ data class UserInfoDto(   // 데이터클래스
         UserInfo(
             userKey, userRegistrationNumber, userName, userIncomeAmount
         )
+
+    fun toLoanRequestKafkaDto() = LoanRequestDto(
+        userKey, userName, userIncomeAmount, userRegistrationNumber)
 }
