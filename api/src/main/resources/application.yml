@@ -5,3 +5,6 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
+server:
+  port: 80   # 충돌이 일어나지 않게 api(메인) 의 포트 지정

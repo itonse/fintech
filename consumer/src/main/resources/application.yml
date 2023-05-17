@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    include:
+      - domain   # 도메인의 profile 을 참고하도록
