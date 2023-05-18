@@ -48,3 +48,33 @@ subprojects {
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
 }
+
+project(":api") {   // 프로젝트 별로 명시
+    dependencies {
+        implementation(project(":kafka"))
+        implementation(project(":domain"))
+    }
+}
+
+project(":consumer") {
+    dependencies {
+        implementation(project(":domain"))
+        implementation(project(":kafka"))
+    }
+}
+
+project(":domain") {   // domain 과 kafka 는 main(실행) 함수가 없다
+    val jar: Jar by tasks  // 실행 가능한 것을 만들지 않아도 된다고 명시
+    val bootJar: org.springframework.boot.gradle.tasks.bundling.BootJar by tasks
+
+    bootJar.enabled = false   // 실행 가능한 파일을 만들 때는
+    jar.enabled = true
+}
+
+project(":kafka") {
+    val jar: Jar by tasks
+    val bootJar: org.springframework.boot.gradle.tasks.bundling.BootJar by tasks
+
+    bootJar.enabled = false   // 실행 가능한 파일을 만들 때는
+    jar.enabled = true
+}
