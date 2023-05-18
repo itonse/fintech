@@ -18,7 +18,7 @@ import org.springframework.kafka.core.ProducerFactory
 @EnableKafka
 class KafkaConfig {
     companion object {
-        const val bootstrapServer = "localhost:9092"   // Kafka 브로커 서버 위치
+        const val bootstrapServer = "kafka:9092"   // Kafka 브로커 서버 위치
     }
 
     @Bean
